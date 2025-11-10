@@ -13,9 +13,9 @@ const ProductCard = ({ products }) => {
             </figure>
 
             <div className="card-body p-3">
-                <div className='flex'>
+                <div className='flex items-center justify-between'>
                     <h2 className="card-title text-base font-semibold flex justify-between items-center cts">
-                        {products.name}
+                        {products.categoryName}
                     </h2>
                     <div className="btn btn-xs text-[8px] bg-orange-300 text-white">{products.stock}</div>
                 </div>
