@@ -3,32 +3,39 @@ import { IoIosStarHalf } from 'react-icons/io';
 
 const ProductCard = ({ products }) => {
     return (
-        <div>
-            <div className="card bg-base-100 w-96 shadow-sm">
-                <figure>
-                    <img
-                        src={products.image}
-                        alt="Shoes" />
-                </figure>
-                <div className="card-body">
-                    <h2 className="card-title">
+        <div className="container mx-auto px-4 card bg-base-100 w-[230px] h-[350px] shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <figure className="h-[150px]">
+                <img
+                    src={products.image}
+                    alt={products.name}
+                    className="w-full h-full object-contain rounded-t-lg"
+                />
+            </figure>
+
+            <div className="card-body p-3">
+                <div className='flex'>
+                    <h2 className="card-title text-base font-semibold flex justify-between items-center cts">
                         {products.name}
-                        <div className="badge text-xs bg-orange-300 ">{products.stock}</div>
                     </h2>
-                    <p>{products.description}</p>
-                    <p className='flex items-center text-orange-300'>
-                        <IoIosStarHalf />
-                        <IoIosStarHalf />
-                        <IoIosStarHalf />
-                        <IoIosStarHalf />
-                    </p>
-                    <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Fashion</div>
-                        <div className="badge badge-outline">Products</div>
-                    </div>
+                    <div className="btn btn-xs text-[8px] bg-orange-300 text-white">{products.stock}</div>
+                </div>
+
+                <p className="text-xs text-gray-500 line-clamp-2 hover:text-[#5CAF90] transition duration-300">{products.description}</p>
+
+                <p className="flex items-center text-orange-400 text-sm mt-1">
+                    <IoIosStarHalf />
+                    <IoIosStarHalf />
+                    <IoIosStarHalf />
+                    <IoIosStarHalf />
+                </p>
+
+                <div className="flex items-center justify-between mt-1">
+                    <p className="font-bold text-sm text-[#4B5966]">${products.price}</p>
+                    <p className="text-gray-400 line-through font-semibold text-xs -translate-x-8">${products.mrp}</p>
                 </div>
             </div>
         </div>
+
     );
 };
 

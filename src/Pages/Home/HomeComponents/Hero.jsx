@@ -6,7 +6,7 @@ import { Autoplay } from 'swiper/modules';
 import image from '../../../assets/image/HERO-COVER.jpg'
 const Hero = () => {
     return (
-        <div>
+        <div className='container mx-auto px-4'>
             <Swiper
             modules={[Autoplay]}
             autoplay={{
