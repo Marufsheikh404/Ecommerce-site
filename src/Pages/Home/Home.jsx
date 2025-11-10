@@ -5,6 +5,7 @@ import PopularProduct from './HomeComponents/PopularProduct';
 import LastestExclusive from './HomeComponents/LastestExclusive';
 import TopProducts from './HomeComponents/TopProducts';
 import Collaction from './HomeComponents/Collaction';
+import Support from './HomeComponents/Support';
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
             <LastestExclusive></LastestExclusive>
             <TopProducts></TopProducts>
             <Collaction></Collaction>
+            <Support></Support>
         </div>
     );
 };
