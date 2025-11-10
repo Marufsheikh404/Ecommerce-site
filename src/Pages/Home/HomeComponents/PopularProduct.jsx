@@ -30,13 +30,13 @@ const PopularProduct = () => {
                 {
                     ProductsFilter
                         .sort((a, b) => b.ratings - a.ratings)
-                        .slice(0, 4)
+                        .slice(0, 8)
                         .map(item => <ProductCard key={item.id} products={item}></ProductCard>)
                 }
             </div>
-            <Link to={'/'}> <div className='cp flex items-center gap-2 py-2 px-3 my-4 w-50 rounded-md hover:bg-[#3e856b] cursor-pointer'>
+            <Link to={'category'}> <div className='cp flex items-center gap-2 py-2 px-3 my-4 w-50 rounded-md cursor-pointer mx-auto'>
                 <BiCategory />
-                <h1>View All Products</h1>
+                <h1 className='text-white'>View All Products</h1>
             </div></Link>
         </div>
     );

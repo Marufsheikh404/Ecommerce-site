@@ -18,7 +18,7 @@ const Navber = () => {
                 <NavLink to="/category"
                     className={({ isActive }) =>
                         isActive ? 'text-[#5CAF90] font-semibold' : 'text-gray-700'
-                    }>Category</NavLink>
+                    }>Shop-Now</NavLink>
                 <NavLink to="/blogs"
                     className={({ isActive }) =>
                         isActive ? 'text-[#5CAF90] font-semibold' : 'text-gray-700'
