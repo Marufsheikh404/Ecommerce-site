@@ -22,14 +22,14 @@ const ProductCard = ({ products }) => {
 
                 <p className="text-xs text-gray-500 line-clamp-2 hover:text-[#5CAF90] transition duration-300">{products.description}</p>
 
-                <p className="flex items-center text-orange-400 text-sm mt-1">
+                <p className="flex items-center text-orange-400 text-sm">
                     <IoIosStarHalf />
                     <IoIosStarHalf />
                     <IoIosStarHalf />
                     <IoIosStarHalf />
                 </p>
 
-                <div className="flex items-center justify-between mt-1">
+                <div className="flex items-center justify-between">
                     <p className="font-bold text-sm text-[#4B5966]">${products.price}</p>
                     <p className="text-gray-400 line-through font-semibold text-xs -translate-x-8">${products.mrp}</p>
                 </div>
