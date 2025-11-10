@@ -22,8 +22,8 @@ const Hero = () => {
                         <img src={image} alt="slide1" />
                         <div className='absolute top-28 left-20'>
                             <p className='text-[#516EBF] font-semibold'>Stating at <span className='text-[#1b44b4] font-bold'>$23.33</span></p>
-                            <h1 className='text-4xl font-bold text-[#4B5966]'>Fashen Sells For <br /> Women</h1>
-                            <button className='px-8 py-2 rounded-md font-semibold hover:bg-[#1e3850] transition-all duration-300 bg-[#4B5966] text-white'>Shop</button>
+                            <h1 className='text-4xl leading-10 font-bold text-[#4B5966]'>Fashen Sells For <br /> Women</h1>
+                            <button className='px-8 py-2 mt-6 rounded-md font-semibold hover:bg-[#1e3850] transition-all duration-300 bg-[#4B5966] text-white'>Shop</button>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -32,8 +32,8 @@ const Hero = () => {
                         <img src={image} alt="slide1" />
                         <div className='absolute top-28 left-20'>
                             <p className='text-[#516EBF] font-semibold'>Stating at <span className='text-[#1b44b4] font-bold'>$23.33</span></p>
-                            <h1 className='text-4xl font-bold text-[#4B5966]'>Fashen Sells For <br /> Women</h1>
-                            <button className='px-8 py-2 rounded-md font-semibold hover:bg-[#1e3850] transition-all duration-300 bg-[#4B5966] text-white'>Shop</button>
+                            <h1 className='text-4xl font-bold leading-10 text-[#4B5966]'>Fashen Sells For <br /> Women</h1>
+                            <button className='px-8 py-2 mt-6 rounded-md font-semibold hover:bg-[#1e3850] transition-all duration-300 bg-[#4B5966] text-white'>Shop</button>
                         </div>
                     </div>
                 </SwiperSlide>
