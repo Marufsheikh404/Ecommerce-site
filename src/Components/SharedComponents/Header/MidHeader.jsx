@@ -6,7 +6,7 @@ import { CiCreditCard1 } from 'react-icons/ci';
 
 const MidHeader = () => {
     return (
-        <div className='flex items-center justify-between container mx-auto px-4 my-3'>
+        <div className='flex items-center justify-between container mx-auto px-4 my-2'>
             <div>
                 <img className='w-22' src={logo} alt="" />
             </div>
@@ -29,25 +29,25 @@ const MidHeader = () => {
             </div>
             <div className='flex items-center gap-2'>
                 <div className='flex items-center ct gap-1'>
-                    <CgProfile size={20}/>
-                    <div className='leading-3'>
-                        <p>Account</p>
+                    <CgProfile size={30}/>
+                    <div className='leading-2'>
+                        <p className='text-xs'>Account</p>
                         <span className=' text-xs'>Login</span>
                     </div>
                 </div>
 
                 <div className='flex items-center ct gap-1'>
-                    <GiSelfLove size={20}/>
-                    <div className='leading-3'>
-                        <p>WishList</p>
+                    <GiSelfLove size={30}/>
+                    <div className='leading-2'>
+                        <p className='text-xs'>WishList</p>
                         <span className=' text-xs'>3-Items</span>
                     </div>
                 </div>
 
                 <div className='flex items-center ct gap-1'>
-                    <CiCreditCard1 size={20} />
-                    <div className='leading-3'>
-                        <p>Card</p>
+                    <CiCreditCard1 size={30} />
+                    <div className='leading-2'>
+                        <p  className='text-xs'>Card</p>
                         <span className=' text-xs'>3-Items</span>
                     </div>
                 </div>
