@@ -11,13 +11,11 @@ const Navber = () => {
                 <p>All Category</p>
             </div>
             <div className='flex items-center gap-15 cts'>
-                <NavLink to="/" className={({ isActive }) =>isActive ? `#5CAF90` : ``}>
-                    Home
-                </NavLink>
-                <NavLink to="/" className={({ isActive }) =>isActive ? `#5CAF90` : ``}> <p>Category</p></NavLink>
-                <NavLink to="/" className={({ isActive }) =>isActive ? `#5CAF90` : ``}> <p>Blogs</p></NavLink>
-                <NavLink to="/" className={({ isActive }) =>isActive ? `#5CAF90` : ``}> <p>Products</p></NavLink>
-                <NavLink to="/" className={({ isActive }) =>isActive ? `#5CAF90` : ``}> <p>Pages</p></NavLink>
+                <NavLink to="/" style={({ isActive }) => ({color: isActive ? '#5CAF90' : ''})}>Home</NavLink>
+                <NavLink to="/" style={({ isActive }) => ({color: isActive ? '#5CAF90' : ''})}>Category</NavLink>
+                <NavLink to="/" style={({ isActive }) => ({color: isActive ? '#5CAF90' : ''})}>Blogs</NavLink>
+                <NavLink to="/" style={({ isActive }) => ({color: isActive ? '#5CAF90' : ''})}>Products</NavLink>
+                <NavLink to="/" style={({ isActive }) => ({color: isActive ? '#5CAF90' : ''})}>Pages</NavLink>
             </div>
             <div className='flex items-center gap-2 cp py-2 px-2 rounded-md text-white'>
                 <CiLocationOn />
