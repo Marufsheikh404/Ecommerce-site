@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from 'react';
+
+import useData from '../../../Hooks/useData';
 
 const HomoCategory = () => {
-    const [categories, setCategories] = useState([]);
-    useEffect(() => {
-        fetch('/Category.json')
-            .then(res => res.json())
-            .then(data => setCategories(data))
-    }, [])
+    const {categories} = useData();
     return (
         <div className='flex items-center gap-5 my-4 container mx-auto px-4'>
             {
