@@ -6,24 +6,33 @@ import Root from "./layout/Root";
 import Home from "./Pages/Home/Home";
 import Shop from "./Pages/Shop/Shop";
 import SingleProduct from "./Components/SharedComponents/SingleProduct";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init({
+  offset: 120,
+  delay: 0, 
+  duration: 4000, 
+  easing: 'ease'
+});
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    children:[
+    children: [
       {
-        index:true,
-        element:<Home></Home>
+        index: true,
+        element: <Home></Home>
       },
       {
-        path:'category',
-        element:<Shop></Shop>
+        path: 'category',
+        element: <Shop></Shop>
       },
       {
-        path:'/category/:id',
-        element:<SingleProduct></SingleProduct>
+        path: '/category/:id',
+        element: <SingleProduct></SingleProduct>
       }
     ]
   },
