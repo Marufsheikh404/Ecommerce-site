@@ -62,6 +62,19 @@ const SingleProduct = () => {
                                 }
                             </div>
                         </div>
+                        <div>
+                            <div>
+                                <p>-</p>
+                                <p>1</p>
+                                <p>+</p>
+                            </div>
+                            <div>
+                                <button>ADD TO CARD</button>
+                            </div>
+                            <div>
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
