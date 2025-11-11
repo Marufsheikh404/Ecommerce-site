@@ -5,6 +5,7 @@ import './index.css'
 import Root from "./layout/Root";
 import Home from "./Pages/Home/Home";
 import Shop from "./Pages/Shop/Shop";
+import SingleProduct from "./Components/SharedComponents/SingleProduct";
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path:'category',
         element:<Shop></Shop>
+      },
+      {
+        path:'/category/:id',
+        element:<SingleProduct></SingleProduct>
       }
     ]
   },

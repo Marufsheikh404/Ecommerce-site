@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProductCard from "../../Components/SharedComponents/ProductCard";
 import useData from "../../Hooks/useData";
+import { Link } from "react-router";
 
 
 const Shop = () => {
@@ -16,8 +17,8 @@ const Shop = () => {
         setWidth(p)
     }
 
-    const filterID = products.filter(p =>{
-        const matchCategory = id? p.categoryId == id : products;
+    const filterID = products.filter(p => {
+        const matchCategory = id ? p.categoryId == id : products;
         const matchWidth = width ? p.width == width : products;
         return matchCategory && matchWidth
     });
@@ -51,13 +52,11 @@ const Shop = () => {
 
                 </div>
                 <div className='col-span-10 '>
-                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-10 ml-10 gap-5">
-                        {
-                            filterID
-                                .map(d => <ProductCard key={d.id} products={d}></ProductCard>)
-                        }
-                    </div>
-
+                        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-10 ml-10 gap-5">
+                            {
+                                filterID.map(d => <ProductCard key={d.id} products={d}></ProductCard>)
+                            }
+                        </div>
                 </div>
             </div>
         </div>
