@@ -1,6 +1,8 @@
 import { IoIosStarHalf } from 'react-icons/io';
 import useData from '../../Hooks/useData';
 import { useLocation } from 'react-router';
+import { GiSelfLove } from 'react-icons/gi';
+import { IoEyeOutline } from 'react-icons/io5';
 
 const SingleProduct = () => {
     const location = useLocation();
@@ -55,24 +57,25 @@ const SingleProduct = () => {
                             <div className='flex items-center gap-3 mt-1'>
                                 {
                                     findProducts?.weightOptions?.map((w, inx) => (
-                                        <div className='border border-gray-200 px-2 text-white  rounded-md shadow-2xl bg-[#2f8163] hover:bg-[#5CAF90] transition duration-300 ease-in-out'>
-                                            <button key={inx}>{w}</button>
+                                        <div>
+                                            <button className='btn btn-xs bg-[#5CAF90]' key={inx}>{w}</button>
                                         </div>
                                     ))
                                 }
                             </div>
                         </div>
-                        <div>
-                            <div>
+                        <div className='flex items-center justify-between w-80 my-4'>
+                            <div className='flex items-center gap-3 border border-gray-200 px-6 py-1'>
                                 <p>-</p>
                                 <p>1</p>
                                 <p>+</p>
                             </div>
                             <div>
-                                <button>ADD TO CARD</button>
+                                <button className='btn btn-xs bg-[#4B5966] text-white hover:bg-[#449a7b] transition duration-300 ease-in-out'>ADD TO CARD</button>
                             </div>
-                            <div>
-                                
+                            <div className='flex items-center gap-5'>
+                                <p className='hover:bg-[#5CAF90] rounded-md px-2 py-2 transition duration-300 ease in'> <GiSelfLove /></p>
+                                <p className='hover:bg-[#5CAF90] rounded-md px-2 py-2 transition duration-300 ease in'><IoEyeOutline /></p>
                             </div>
                         </div>
                     </div>
