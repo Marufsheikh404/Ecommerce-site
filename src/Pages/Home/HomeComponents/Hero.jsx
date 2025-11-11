@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
-import image from '../../../assets/image/HERO-COVER.jpg'
+import image from '../../../assets/image/carosul/10002.jpg'
+import image2 from '../../../assets/image/carosul/10003.jpg'
 const Hero = () => {
     return (
         <div className='container mx-auto px-4'>
@@ -29,7 +30,7 @@ const Hero = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='relative'>
-                        <img src={image} alt="slide1" />
+                        <img src={image2} alt="slide1" />
                         <div className='absolute top-28 left-20'>
                             <p className='text-[#516EBF] font-semibold'>Stating at <span className='text-[#1b44b4] font-bold'>$23.33</span></p>
                             <h1 className='text-4xl font-bold leading-10 text-[#4B5966]'>Fashen Sells For <br /> Women</h1>
