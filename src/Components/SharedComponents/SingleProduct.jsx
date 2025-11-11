@@ -17,7 +17,7 @@ const SingleProduct = () => {
                             alt={findProducts?.name}
                         />
                     </figure>
-                    <div className="card-body ml-20 mt-15">
+                    <div className="card-body ml-20 mt-10">
                         <h2 className="card-title text-xl text-[#4B5966]">{findProducts?.name}</h2>
                         <div className='flex items-center w-45'>
                             <p className='text-orange-300 flex items-center'> <IoIosStarHalf />
@@ -39,7 +39,29 @@ const SingleProduct = () => {
                             <p className='cts'>M.R.P: <span className='line-through'>$2999.0</span></p>
                             <p className='text-[#5CAF90] ml-83'>{findProducts?.stock}</p>
                         </div>
-
+                        <div className='my-3 cts'>
+                            <p>{findProducts?.description}</p>
+                        </div>
+                        <div className='-mt-4'>
+                            <div className='ct ml-5'>
+                                <li>closure : {findProducts?.closure}</li>
+                                <li>sole : {findProducts?.sole}</li>
+                                <li>width : {findProducts?.width}</li>
+                                <li>outerMaterial : {findProducts?.outerMaterial}</li>
+                            </div>
+                        </div>
+                        <div>
+                            <h1 className='text-[#202020] font-semibold'>Weight</h1>
+                            <div className='flex items-center gap-3 mt-1'>
+                                {
+                                    findProducts?.weightOptions?.map((w, inx) => (
+                                        <div className='border border-gray-200 px-2 text-white  rounded-md shadow-2xl bg-[#2f8163] hover:bg-[#5CAF90] transition duration-300 ease-in-out'>
+                                            <button key={inx}>{w}</button>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
