@@ -6,12 +6,12 @@ import { CiCreditCard1 } from 'react-icons/ci';
 
 const MidHeader = () => {
     return (
-        <div className='flex items-center justify-between container mx-auto px-4 my-2'>
+        <div className='flex items-center justify-between container mx-auto px-4 my-5 '>
             <div>
                 <img className='w-22' src={logo} alt="" />
             </div>
             <div>
-                <label className="input  h-7 translate-x-37">
+                <label className="input  h-7 translate-x-30">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                             strokeLinejoin="round"
@@ -27,27 +27,27 @@ const MidHeader = () => {
                     <input type="search" className='px-25 border-none' required placeholder="Search" />
                 </label>
             </div>
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-3'>
                 <div className='flex items-center ct gap-1'>
-                    <CgProfile size={30}/>
+                    <CgProfile size={25}/>
                     <div className='leading-2'>
-                        <p className='text-xs'>Account</p>
+                        <p className='text-[9px]'>Account</p>
                         <span className=' text-xs'>Login</span>
                     </div>
                 </div>
 
                 <div className='flex items-center ct gap-1'>
-                    <GiSelfLove size={30}/>
+                    <GiSelfLove size={25}/>
                     <div className='leading-2'>
-                        <p className='text-xs'>WishList</p>
+                        <p className='text-[9px]'>WishList</p>
                         <span className=' text-xs'>3-Items</span>
                     </div>
                 </div>
 
                 <div className='flex items-center ct gap-1'>
-                    <CiCreditCard1 size={30} />
+                    <CiCreditCard1 size={25} />
                     <div className='leading-2'>
-                        <p  className='text-xs'>Card</p>
+                        <p  className='text-[9px]'>Card</p>
                         <span className=' text-xs'>3-Items</span>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BiCategory } from 'react-icons/bi';
 import { CiLocationOn } from 'react-icons/ci';
+import { IoIosArrowDown } from 'react-icons/io';
 import { NavLink } from 'react-router';
 
 const Navber = () => {
@@ -9,6 +10,7 @@ const Navber = () => {
             <div className='flex items-center gap-1 cp py-2 px-2 rounded-md text-white'>
                 <BiCategory size={25} />
                 <p>All Category</p>
+                <div className='mx-2'><IoIosArrowDown /></div>
             </div>
             <div className='flex items-center gap-15 cts'>
                 <NavLink to="/"
@@ -35,6 +37,7 @@ const Navber = () => {
             <div className='flex items-center gap-1 cp py-2 px-2 rounded-md text-white'>
                 <CiLocationOn />
                 <p>New York</p>
+                <div className='ml-3'><IoIosArrowDown /></div>
             </div>
         </div>
     );

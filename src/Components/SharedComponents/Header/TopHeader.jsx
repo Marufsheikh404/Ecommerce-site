@@ -1,3 +1,4 @@
+import { IoIosArrowDown } from "react-icons/io";
 import { PiPhoneCall, PiWhatsappLogoThin } from "react-icons/pi";
 
 
@@ -10,18 +11,24 @@ const TopHeader = () => {
                     <p>+8801719199642</p>
                 </div>
                 <div className="flex items-center gap-1">
-                    <PiWhatsappLogoThin size={20}/>
+                    <PiWhatsappLogoThin size={20} />
                     <p>+8801719199642</p>
                 </div>
             </div>
             <div>
                 <p className="ct">World Fastest Online Shopping Destination</p>
             </div>
-            <div className="flex items-center gap-2 ct">
-                <p>Help?</p>
-                <p>Trader Order</p>
-                <p>English</p>
-                <p>Dollar</p>
+            <div className="flex items-center gap-3 ct">
+                <p>Help ?</p>
+                <p>Trader Order ?</p>
+                <div className="flex items-center">
+                    <p>English</p>
+                    <IoIosArrowDown />
+                </div>
+                <div className="flex items-center">
+                    <p>Dollar</p>
+                    <IoIosArrowDown />
+                </div>
             </div>
         </div>
     );
