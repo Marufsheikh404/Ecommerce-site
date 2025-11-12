@@ -7,7 +7,7 @@ import { CiCreditCard1 } from 'react-icons/ci';
 const MidHeader = () => {
     return (
         <div className='lg:flex items-center justify-between container mx-auto px-4 my-5 '>
-            <div className='translate-x-34 lg:translate-x-0'>
+            <div className='translate-x-36 lg:translate-x-0'>
                 <img className='w-22' src={logo} alt="" />
             </div>
             <div>
