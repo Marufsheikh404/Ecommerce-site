@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const ProductCard = ({ products }) => {
     return (
-        <div className="container mx-auto px-4 flex-1 card bg-base-100 lg:w-[230px] lg:h-[300px] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer">
+        <div className="container mx-auto px-4 card bg-base-100 lg:w-[300px] lg:h-[300px] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer">
             <figure className="h-[150px]">
                 <img
                     src={products.image}
