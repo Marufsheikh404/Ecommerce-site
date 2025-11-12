@@ -10,11 +10,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
+import AuthProvider from "./Providers/AuthProvider";
 // ..
 AOS.init({
   offset: 120,
-  delay: 0, 
-  duration: 4000, 
+  delay: 0,
+  duration: 4000,
   easing: 'ease'
 });
 
@@ -37,12 +38,12 @@ const router = createBrowserRouter([
         element: <SingleProduct></SingleProduct>
       },
       {
-        path:'/about',
-        element:<About></About>
+        path: '/about',
+        element: <About></About>
       },
       {
-        path:'/contact',
-        element:<Contact></Contact>
+        path: '/contact',
+        element: <Contact></Contact>
       }
     ]
   },
@@ -51,5 +52,7 @@ const router = createBrowserRouter([
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
-  <RouterProvider router={router} />,
+  <AuthProvider>
+    <RouterProvider router={router} />
+  </AuthProvider>
 );
