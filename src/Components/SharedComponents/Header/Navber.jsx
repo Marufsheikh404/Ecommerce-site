@@ -29,10 +29,6 @@ const Navber = () => {
                     className={({ isActive }) =>
                         isActive ? 'text-[#5CAF90] font-semibold' : 'text-gray-700'
                     }>Contact</NavLink>
-                <NavLink to="/"
-                    className={({ isActive }) =>
-                        isActive ? 'text-[#5CAF90] font-semibold' : 'text-gray-700'
-                    }>Pages</NavLink>
             </div>
             <div className='flex items-center gap-1 cp py-2 px-2 rounded-md text-white'>
                 <CiLocationOn />
