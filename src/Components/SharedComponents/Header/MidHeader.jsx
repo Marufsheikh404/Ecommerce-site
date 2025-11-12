@@ -6,12 +6,12 @@ import { CiCreditCard1 } from 'react-icons/ci';
 
 const MidHeader = () => {
     return (
-        <div className='flex items-center justify-between container mx-auto px-4 my-5 '>
-            <div>
+        <div className='lg:flex items-center justify-between container mx-auto px-4 my-5 '>
+            <div className='translate-x-34 lg:translate-x-0'>
                 <img className='w-22' src={logo} alt="" />
             </div>
             <div>
-                <label className="input h-7 translate-x-3 lg:translate-x-30">
+                <label className="input w-full h-7 mt-4 translate-x-3 lg:translate-x-30">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                             strokeLinejoin="round"
