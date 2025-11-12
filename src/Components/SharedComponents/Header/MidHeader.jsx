@@ -11,7 +11,7 @@ const MidHeader = () => {
                 <img className='w-22' src={logo} alt="" />
             </div>
             <div>
-                <label className="input  h-7 translate-x-30">
+                <label className="input h-7 translate-x-3 lg:translate-x-30">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                             strokeLinejoin="round"
@@ -27,7 +27,8 @@ const MidHeader = () => {
                     <input type="search" className='px-25 border-none' required placeholder="Search" />
                 </label>
             </div>
-            <div className='flex items-center gap-3'>
+
+            <div className='hidden lg:flex items-center gap-3'>
                 <div className='flex items-center ct gap-1'>
                     <CgProfile size={25}/>
                     <div className='leading-2'>

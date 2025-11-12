@@ -4,7 +4,7 @@ import { PiPhoneCall, PiWhatsappLogoThin } from "react-icons/pi";
 
 const TopHeader = () => {
     return (
-        <div className="flex items-center justify-between container mx-auto px-4">
+        <div className="hidden lg:flex items-center justify-between container mx-auto px-4">
             <div className="flex items-center gap-2 ct">
                 <div className="flex items-center gap-1">
                     <PiPhoneCall size={20} />
