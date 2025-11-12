@@ -1,40 +1,120 @@
-import React from 'react';
-import { BiCategory } from 'react-icons/bi';
-import { CiLocationOn } from 'react-icons/ci';
-import { IoIosArrowDown } from 'react-icons/io';
-import { NavLink } from 'react-router';
+import React, { useState } from "react";
+import { BiCategory } from "react-icons/bi";
+import { CiLocationOn } from "react-icons/ci";
+import { IoIosArrowDown } from "react-icons/io";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
+import { NavLink } from "react-router";
+
 
 const Navber = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
-        <div className='flex items-center justify-between container mx-auto px-3 border-y border-gray-200 py-5'>
-            <div className='flex items-center gap-1 cp py-2 px-2 rounded-md text-white'>
-                <BiCategory size={25} />
-                <p>All Category</p>
-                <div className='mx-2'><IoIosArrowDown /></div>
+        <div className="border-y border-gray-200 py-4">
+            <div className="flex items-center justify-between container mx-auto px-3">
+                {/* Left: All Category */}
+                <div className="flex items-center gap-1 cp py-2 px-2 rounded-md text-white bg-[#5CAF90]">
+                    <BiCategory size={25} />
+                    <p>All Category</p>
+                    <IoIosArrowDown className="ml-1" />
+                </div>
+
+                {/* Center Nav Links - visible on large screens only */}
+                <div className="hidden lg:flex items-center gap-10 cts">
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                        }
+                    >
+                        Home
+                    </NavLink>
+                    <NavLink
+                        to="/category"
+                        className={({ isActive }) =>
+                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                        }
+                    >
+                        Shop-Now
+                    </NavLink>
+                    <NavLink
+                        to="/about"
+                        className={({ isActive }) =>
+                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                        }
+                    >
+                        About
+                    </NavLink>
+                    <NavLink
+                        to="/contact"
+                        className={({ isActive }) =>
+                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                        }
+                    >
+                        Contact
+                    </NavLink>
+                </div>
+
+                {/* Right: Location or Hamburger */}
+                <div className="flex items-center gap-1">
+                    {/* Location visible only on lg */}
+                    <div className="hidden lg:flex items-center gap-1 cp py-2 px-2 rounded-md text-white bg-[#5CAF90]">
+                        <CiLocationOn />
+                        <p>New York</p>
+                        <IoIosArrowDown className="ml-2" />
+                    </div>
+
+                    {/* Hamburger visible only on small screens */}
+                    <button
+                        className="lg:hidden text-2xl text-gray-700"
+                        onClick={() => setMenuOpen(!menuOpen)}
+                    >
+                        {menuOpen ? <HiOutlineX /> : <HiOutlineMenu />}
+                    </button>
+                </div>
             </div>
-            <div className='flex items-center gap-15 cts'>
-                <NavLink to="/"
-                    className={({ isActive }) =>
-                        isActive ? 'text-[#5CAF90] font-semibold' : 'text-gray-700'
-                    }>Home</NavLink>
-                <NavLink to="/category"
-                    className={({ isActive }) =>
-                        isActive ? 'text-[#5CAF90] font-semibold' : 'text-gray-700'
-                    }>Shop-Now</NavLink>
-                <NavLink to="/about"
-                    className={({ isActive }) =>
-                        isActive ? 'text-[#5CAF90] font-semibold' : 'text-gray-700'
-                    }>About</NavLink>
-                <NavLink to="/contact"
-                    className={({ isActive }) =>
-                        isActive ? 'text-[#5CAF90] font-semibold' : 'text-gray-700'
-                    }>Contact</NavLink>
-            </div>
-            <div className='flex items-center gap-1 cp py-2 px-2 rounded-md text-white'>
-                <CiLocationOn />
-                <p>New York</p>
-                <div className='ml-3'><IoIosArrowDown /></div>
-            </div>
+
+            {/* Mobile Menu Drawer */}
+            {menuOpen && (
+                <div className="lg:hidden flex flex-col items-start gap-4 mt-4 px-5 pb-4 border-t border-gray-200 animate-slide-down bg-white shadow-sm">
+                    <NavLink
+                        to="/"
+                        onClick={() => setMenuOpen(false)}
+                        className={({ isActive }) =>
+                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                        }
+                    >
+                        Home
+                    </NavLink>
+                    <NavLink
+                        to="/category"
+                        onClick={() => setMenuOpen(false)}
+                        className={({ isActive }) =>
+                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                        }
+                    >
+                        Shop-Now
+                    </NavLink>
+                    <NavLink
+                        to="/about"
+                        onClick={() => setMenuOpen(false)}
+                        className={({ isActive }) =>
+                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                        }
+                    >
+                        About
+                    </NavLink>
+                    <NavLink
+                        to="/contact"
+                        onClick={() => setMenuOpen(false)}
+                        className={({ isActive }) =>
+                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                        }
+                    >
+                        Contact
+                    </NavLink>
+                </div>
+            )}
         </div>
     );
 };
