@@ -6,8 +6,8 @@ import { Link } from 'react-router';
 
 const Collaction = () => {
     return (
-        <div className='container mx-auto px-4 my-10 flex flex-col lg:flex-row  items-stretch gap-3'>
-            <div className="card flex-1 bg-base-100 image-full w-96 shadow-sm relative">
+        <div className='container mx-auto px-4 lg:my-10 flex flex-col lg:flex-row  items-stretch gap-3'>
+            <div className="card flex-1 mt-4 lg:mt-0 bg-base-100 image-full w-90 lg:w-96 shadow-sm relative">
                 <figure>
                     <img
                         src={img1}
@@ -24,7 +24,7 @@ const Collaction = () => {
                 <p className='absolute top-0 left-0 bg-white text-xs font-semibold'>50% Off</p>
             </div>
 
-            <div className="card flex-1 bg-base-100 image-full w-96 shadow-sm relative">
+            <div className="card flex-1 bg-base-100 mt-4 lg:mt-0 image-full w-90 lg:w-96 shadow-sm relative">
                 <figure>
                     <img
                         src={img2}
@@ -40,7 +40,7 @@ const Collaction = () => {
                 <p className='absolute top-0 left-0 bg-white text-xs font-semibold'>50% Off</p>
             </div>
 
-            <div className="card flex-1 bg-base-100 image-full w-96 shadow-sm relative">
+            <div className="card flex-1 mt-4 lg:mt-0 bg-base-100 image-full w-90 lg:w-96 shadow-sm relative">
                 <figure>
                     <img
                         src={img3}
