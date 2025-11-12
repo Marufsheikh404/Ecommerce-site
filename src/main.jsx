@@ -8,6 +8,8 @@ import Shop from "./Pages/Shop/Shop";
 import SingleProduct from "./Components/SharedComponents/SingleProduct";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import About from "./Pages/About/About";
+import Contact from "./Pages/Contact/Contact";
 // ..
 AOS.init({
   offset: 120,
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: '/category/:id',
         element: <SingleProduct></SingleProduct>
+      },
+      {
+        path:'/about',
+        element:<About></About>
+      },
+      {
+        path:'/contact',
+        element:<Contact></Contact>
       }
     ]
   },

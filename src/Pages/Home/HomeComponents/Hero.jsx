@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
-import image from '../../../assets/image/carosul/10002.jpg'
-import image2 from '../../../assets/image/carosul/10003.jpg'
+import image from '../../../assets/carosul/10002.jpg'
+import image2 from '../../../assets/carosul/10003.jpg'
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 const Hero = () => {
     return (
