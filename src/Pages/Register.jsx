@@ -4,7 +4,7 @@ import useAuth from '../Hook/useAuth';
 import Swal from 'sweetalert2';
 
 const Register = () => {
-    const { signUp } = useAuth();
+    const { signUp, setLoading } = useAuth();
     const handleClick = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -20,9 +20,18 @@ const Register = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                setLoading(false)
             })
             .catch(error => {
                 console.log(error)
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "SignUp Fail",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                setLoading(false)
             });
     };
     return (
