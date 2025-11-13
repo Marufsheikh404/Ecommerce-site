@@ -1,12 +1,13 @@
 import Lottie from 'lottie-react';
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import login from '../../Animation/login.json'
 import useAuth from '../Hook/useAuth';
 import Swal from 'sweetalert2';
 
 const Login = () => {
     const { signIn, setLoading } = useAuth();
+    const navigate = useNavigate();
     const handleClick = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -16,6 +17,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                e.target.reset();
+                navigate('/')
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -38,7 +41,7 @@ const Login = () => {
             });
     }
     return (
-        <div className='container mx-auto px-4'>
+        <div className='container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-15'>
             <div>
                 <form onSubmit={handleClick} className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
                     <legend className="fieldset-legend text-xl text-center text-[#5CAF90] font-semibold">SignIn</legend>
@@ -55,7 +58,7 @@ const Login = () => {
                     <h1 className='cts translate-x-2'> Do Not Have Any Account? Please <Link to={'/register'}><span className='text-[#5CAF90] font-semibold'>Register</span></Link></h1>
                 </div>
             </div>
-            <div>
+            <div className='w-96'>
                 <Lottie animationData={login}></Lottie>
             </div>
         </div>
