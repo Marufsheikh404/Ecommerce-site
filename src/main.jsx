@@ -12,6 +12,7 @@ import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import AuthProvider from "./Providers/AuthProvider";
 import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 // ..
 AOS.init({
   offset: 120,
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element:<Login></Login>
+      },
+      {
+        path:'/register',
+        element:<Register></Register>
       }
     ]
   },

@@ -3,6 +3,7 @@ import logo from '../../../assets/image/logo.png'
 import { CgProfile } from 'react-icons/cg';
 import { GiSelfLove } from 'react-icons/gi';
 import { CiCreditCard1 } from 'react-icons/ci';
+import { Link } from 'react-router';
 
 const MidHeader = () => {
     return (
@@ -32,7 +33,7 @@ const MidHeader = () => {
                 <div className='flex items-center ct gap-3'>
                     <CgProfile size={25} />
                     <div className='leading-2'>
-                        <button className='btn btn-xs'><span className=' text-sm font-bold'>Login</span></button>
+                        <Link to={'/login'}><button className='btn btn-xs bg-[#5CAF90] text-white'><span className=' text-sm font-semibold'>Login</span></button></Link>
                     </div>
                 </div>
 
