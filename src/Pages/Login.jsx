@@ -1,6 +1,6 @@
 import Lottie from 'lottie-react';
 import React from 'react';
-import { Link, useLoaderData, useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import login from '../../Animation/login.json'
 import useAuth from '../Hook/useAuth';
 import Swal from 'sweetalert2';
@@ -8,8 +8,7 @@ import Swal from 'sweetalert2';
 const Login = () => {
     const { signIn, setLoading } = useAuth();
     const navigate = useNavigate();
-    const location = useLoaderData();
-    const from = location?.state || '/'
+    // const location = useLocation();
     const handleClick = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -20,7 +19,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 e.target.reset();
-                navigate(from)
+                navigate('/')
                 Swal.fire({
                     position: "top-end",
                     icon: "success",

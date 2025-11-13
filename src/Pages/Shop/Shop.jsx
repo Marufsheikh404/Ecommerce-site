@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ProductCard from "../../Components/SharedComponents/ProductCard";
 import useData from "../../Hooks/useData";
-import { Link } from "react-router";
 
 const Shop = () => {
     const { products, categories } = useData();

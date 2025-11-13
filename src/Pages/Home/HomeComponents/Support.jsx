@@ -29,8 +29,8 @@ const Support = () => {
     return (
         <div className='container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
             {
-                infoData.map(d => (
-                    <div className="card bg-base-100 lg:w-55 lg:h-55 w-full shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer mx-auto my-3">
+                infoData.map((d,inx) => (
+                    <div key={inx} className="card bg-base-100 lg:w-55 lg:h-55 w-full shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer mx-auto my-3">
                         <figure className="px-10 pt-10">
                             <p className='text-[#5CAF90]'>{d.icon}</p>
                         </figure>
