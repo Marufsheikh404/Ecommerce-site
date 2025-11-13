@@ -29,18 +29,17 @@ const MidHeader = () => {
             </div>
 
             <div className='hidden lg:flex items-center gap-3'>
-                <div className='flex items-center ct gap-1'>
-                    <CgProfile size={25}/>
+                <div className='flex items-center ct gap-3'>
+                    <CgProfile size={25} />
                     <div className='leading-2'>
-                        <p className='text-[9px]'>Account</p>
-                        <span className=' text-xs'>Login</span>
+                        <button className='btn btn-xs'><span className=' text-sm font-bold'>Login</span></button>
                     </div>
                 </div>
 
                 <div className='flex items-center ct gap-1'>
-                    <GiSelfLove size={25}/>
+                    <GiSelfLove size={25} />
                     <div className='leading-2'>
-                        <p className='text-[9px]'>WishList</p>
+                        <p className='text-[10px]'>WishList</p>
                         <span className=' text-xs'>3-Items</span>
                     </div>
                 </div>
@@ -48,7 +47,7 @@ const MidHeader = () => {
                 <div className='flex items-center ct gap-1'>
                     <CiCreditCard1 size={25} />
                     <div className='leading-2'>
-                        <p  className='text-[9px]'>Card</p>
+                        <p className='text-[10px]'>Card</p>
                         <span className=' text-xs'>3-Items</span>
                     </div>
                 </div>

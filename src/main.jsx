@@ -11,6 +11,7 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import AuthProvider from "./Providers/AuthProvider";
+import Login from "./Pages/Login";
 // ..
 AOS.init({
   offset: 120,
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact></Contact>
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
       }
     ]
   },
