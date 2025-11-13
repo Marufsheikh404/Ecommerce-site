@@ -12,7 +12,7 @@ const Login = () => {
         <div className='container mx-auto px-4'>
             <div>
                 <form onSubmit={handleClick} className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                    <legend className="fieldset-legend text-[#5CAF90]">SignIn</legend>
+                    <legend className="fieldset-legend text-xl text-center text-[#5CAF90] font-semibold">SignIn</legend>
 
                     <label className="label">Email</label>
                     <input name='email' type="email" className="input" placeholder="Email" />
