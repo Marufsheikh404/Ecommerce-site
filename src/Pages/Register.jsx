@@ -15,10 +15,10 @@ const Register = () => {
                     <legend className="fieldset-legend text-xl text-center text-[#5CAF90] font-semibold">Register</legend>
 
                     <label className="label">First Name</label>
-                    <input name='first' type="email" className="input" placeholder="Email" />
+                    <input name='first' type="email" className="input" placeholder="Enter Your First Name" />
 
                     <label className="label">Last Name</label>
-                    <input name='last' type="email" className="input" placeholder="Email" />
+                    <input name='last' type="email" className="input" placeholder="Enter You Last Name" />
 
                     <label className="label">Email</label>
                     <input name='email' type="email" className="input" placeholder="Email" />
