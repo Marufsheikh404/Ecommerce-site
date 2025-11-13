@@ -1,13 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router';
+import useAuth from '../Hook/useAuth';
+import Swal from 'sweetalert2';
 
 const Register = () => {
+    const { signUp } = useAuth();
     const handleClick = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password)
-    }
+        signUp(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "You SignUp successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(error => {
+                console.log(error)
+            });
+    };
     return (
         <div className='container mx-auto px-4'>
             <div>

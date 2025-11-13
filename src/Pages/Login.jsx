@@ -1,12 +1,32 @@
+import Lottie from 'lottie-react';
 import React from 'react';
 import { Link } from 'react-router';
+import login from '../../Animation/login.json'
+import useAuth from '../Hook/useAuth';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+    const { signIn } = useAuth();
     const handleClick = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password)
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "You Loign successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(error => {
+                console.log(error)
+            });
     }
     return (
         <div className='container mx-auto px-4'>
@@ -25,6 +45,9 @@ const Login = () => {
                 <div>
                     <h1 className='cts translate-x-2'> Do Not Have Any Account? Please <Link to={'/register'}><span className='text-[#5CAF90] font-semibold'>Register</span></Link></h1>
                 </div>
+            </div>
+            <div>
+                <Lottie animationData={login}></Lottie>
             </div>
         </div>
     );
