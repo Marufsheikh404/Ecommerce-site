@@ -13,6 +13,7 @@ import Contact from "./Pages/Contact/Contact";
 import AuthProvider from "./Providers/AuthProvider";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import PrivateRoute from "./Routes/PrivateRoute";
 // ..
 AOS.init({
   offset: 120,
@@ -33,11 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'category',
-        element: <Shop></Shop>
+        element: <PrivateRoute><Shop></Shop></PrivateRoute>
       },
       {
         path: '/category/:id',
-        element: <SingleProduct></SingleProduct>
+        element: <PrivateRoute><SingleProduct></SingleProduct></PrivateRoute>
       },
       {
         path: '/about',
@@ -48,12 +49,12 @@ const router = createBrowserRouter([
         element: <Contact></Contact>
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
       },
       {
-        path:'/register',
-        element:<Register></Register>
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   },

@@ -30,11 +30,9 @@ const Register = () => {
             .catch(error => {
                 console.log(error)
                 Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "SignUp Fail",
-                    showConfirmButton: false,
-                    timer: 1500
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
                 });
                 setLoading(false)
             });

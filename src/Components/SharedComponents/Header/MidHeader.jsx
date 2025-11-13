@@ -4,8 +4,21 @@ import { CgProfile } from 'react-icons/cg';
 import { GiSelfLove } from 'react-icons/gi';
 import { CiCreditCard1 } from 'react-icons/ci';
 import { Link } from 'react-router';
+import useAuth from '../../../Hook/useAuth';
+import Swal from 'sweetalert2';
 
 const MidHeader = () => {
+    const { user, LogOut } = useAuth();
+    const handleClick = () => {
+        LogOut()
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Log Out",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    };
     return (
         <div className='lg:flex items-center justify-between container mx-auto px-4 my-5 '>
             <div className='translate-x-36 lg:translate-x-0'>
@@ -33,7 +46,9 @@ const MidHeader = () => {
                 <div className='flex items-center ct gap-3'>
                     <CgProfile size={25} />
                     <div className='leading-2'>
-                        <Link to={'/login'}><button className='btn btn-xs bg-[#5CAF90] text-white'><span className=' text-sm font-semibold'>Login</span></button></Link>
+                        {
+                            user ? <Link to={'/login'}><button onClick={handleClick} className='btn btn-xs bg-[#5CAF90] text-white'><span className=' text-sm font-semibold'>LogOut</span></button></Link> : <Link to={'/login'}><button className='btn btn-xs bg-[#5CAF90] text-white'><span className=' text-sm font-semibold'>Login</span></button></Link>
+                        }
                     </div>
                 </div>
 

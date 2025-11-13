@@ -33,11 +33,9 @@ const Login = () => {
             .catch(error => {
                 console.log(error)
                 Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Login Fail",
-                    showConfirmButton: false,
-                    timer: 1500
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
                 });
                 setLoading(false)
             });
