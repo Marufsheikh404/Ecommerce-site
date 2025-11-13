@@ -34,11 +34,13 @@ const router = createBrowserRouter([
       },
       {
         path: '/category',
-        element:<Shop></Shop>
+        element: (
+          <PrivateRoute><Shop></Shop></PrivateRoute>
+        )
       },
       {
         path: '/category/:id',
-        element:<SingleProduct></SingleProduct>
+        element: <SingleProduct></SingleProduct>
       },
       {
         path: '/about',
