@@ -70,20 +70,24 @@ const MidHeader = () => {
                         <span  className=' absolute z-10 -top-1 -left-1 text-xs px-1 py-0.5 bg-[#5CAF90] text-white rounded-full'>{ProductCount}</span>
                         {
                             showCard && (
-                                <div className='absolute bg-[#ffffff] text-black top-10 left-0'>
+                                <div className='absolute bg-[#ffffff] text-black top-10 left-0 ronded-lg w-72 z-50 gap-5'>
                                     {cardItem.length === 0 ? <p>Card is Empty</p> :(
-                                        <div>
+                                       <>
+                                            <h3 className='font-semibold border-b pb-2 mb-4'>Shoping Card</h3>
+                                             <div>
                                             {
                                                 cardItem.map(item =>(
-                                                    <div className='p-4' key={item.id}>
-                                                        <img className='w-10 h-12' src={item.image} alt="" />
+                                                    <div className='p-4 bg-gray-100 mb-3 items-center rounded gap-5 ' key={item.id}>
+                                                        <img className='w-10 h-12 object-contain rounded' src={item.image} alt="" />
                                                         <div>
-                                                            <h1>{item.title}</h1>
+                                                            <h1 >{item.categoryName}</h1>
+                                                            <p></p>
                                                         </div>
                                                     </div>
                                                 ))
                                             }
                                         </div>
+                                       </>
                                     )}
                                 </div>
                             )

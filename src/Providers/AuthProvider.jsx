@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { auth } from '../firebase/firebase.config';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, ProviderId, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import Swal from 'sweetalert2';
 
 
@@ -25,6 +25,22 @@ const AuthProvider = ({ children }) => {
             return [...prevItem, { ...product, quantity: 1 }]
         })
     };
+
+    const handleIncrease =(product)=>{
+        setCardItem(prevItem =>
+            prevItem.map(item => item.id === product.id ?{
+                ...item, quantity: item.quantity + 1
+            } : item)
+        )
+    }
+
+    const handleDecrease  =(product)=>{
+        setCardItem(prevItem =>
+            prevItem.map(item => item.id === product.id ? {
+                ...item, quantity: item.quantity -1
+            } : item)
+        )
+    }
 
 
     // signIn user
@@ -53,7 +69,9 @@ const AuthProvider = ({ children }) => {
         user,
         ProductCount,
         handleAddCard,
-        cardItem
+        cardItem,
+        handleIncrease,
+        handleDecrease
     }
 
     useEffect(() => {
