@@ -26,17 +26,17 @@ const AuthProvider = ({ children }) => {
         })
     };
 
-    const handleIncrease =(product)=>{
+    const handleIncrease =(productId)=>{
         setCardItem(prevItem =>
-            prevItem.map(item => item.id === product.id ?{
+            prevItem.map(item => item.id === productId ?{
                 ...item, quantity: item.quantity + 1
             } : item)
         )
     }
 
-    const handleDecrease  =(product)=>{
+    const handleDecrease  =(productId)=>{
         setCardItem(prevItem =>
-            prevItem.map(item => item.id === product.id ? {
+            prevItem.map(item => item.id === productId ? {
                 ...item, quantity: item.quantity -1
             } : item)
         )

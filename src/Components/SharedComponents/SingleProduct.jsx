@@ -7,7 +7,7 @@ import useAuth from '../../Hook/useAuth';
 import toast, { Toaster } from 'react-hot-toast';
 
 const SingleProduct = () => {
-    const {handleAddCard} = useAuth();
+    const {handleAddCard ,ProductCount, handleIncrease,handleDecrease} = useAuth();
     const location = useLocation();
     const id = location.state;
     const { products } = useData();
@@ -61,18 +61,18 @@ const SingleProduct = () => {
                             <div className='flex items-center gap-3 mt-1'>
                                 {
                                     findProducts?.weightOptions?.map((w, inx) => (
-                                        <div>
-                                            <button className='btn btn-xs bg-[#5CAF90]' key={inx}>{w}</button>
+                                        <div key={inx}>
+                                            <button className='btn btn-xs bg-[#5CAF90]'>{w}</button>
                                         </div>
                                     ))
                                 }
                             </div>
                         </div>
                         <div className='flex items-center justify-between w-80 my-4'>
-                            <div className='flex items-center gap-3 border border-gray-200 px-6 py-1'>
-                                <p>-</p>
-                                <p>1</p>
-                                <p>+</p>
+                            <div className='flex items-center gap-3  px-6 py-1'>
+                                <button className='btn btn-xs' onClick={()=>handleDecrease(findProducts.id)}>-</button>
+                                <p>{ProductCount}</p>
+                                <button className='btn btn-xs' onClick={()=>handleIncrease(findProducts.id)}>+</button>
                             </div>
                             <div>
                                 <button onClick={()=>{handleAddCard(findProducts);notify();}} className='btn btn-xs bg-[#4B5966] text-white hover:bg-[#449a7b] transition duration-300 ease-in-out'>ADD TO CARD</button>
