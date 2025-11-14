@@ -52,7 +52,8 @@ const AuthProvider = ({ children }) => {
         LogOut,
         user,
         ProductCount,
-        handleAddCard
+        handleAddCard,
+        cardItem
     }
 
     useEffect(() => {

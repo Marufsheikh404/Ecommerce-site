@@ -6,9 +6,11 @@ import { CiCreditCard1 } from 'react-icons/ci';
 import { Link } from 'react-router';
 import useAuth from '../../../Hook/useAuth';
 import Swal from 'sweetalert2';
+import { useState } from 'react';
 
 const MidHeader = () => {
-    const { user, LogOut,ProductCount } = useAuth();
+    const [showCard, setShowCard] = useState(false);
+    const { user, LogOut,ProductCount,cardItem } = useAuth();
     const handleClick = () => {
         LogOut()
         Swal.fire({
@@ -61,11 +63,31 @@ const MidHeader = () => {
                 </div>
 
                 <div className='flex relative items-center ct gap-1'>
-                    <CiCreditCard1 size={30} />
+                    <CiCreditCard1 onClick={()=>setShowCard(!showCard)} size={30} />
                     <div className='leading-2 flex flex-col gap-1'>
                         <p className='text-[10px]'>Card</p>
                         <p className='text-[10px]'>Items</p>
                         <span  className=' absolute z-10 -top-1 -left-1 text-xs px-1 py-0.5 bg-[#5CAF90] text-white rounded-full'>{ProductCount}</span>
+                        {
+                            showCard && (
+                                <div className='absolute bg-[#ffffff] text-black top-10 left-0'>
+                                    {cardItem.length === 0 ? <p>Card is Empty</p> :(
+                                        <div>
+                                            {
+                                                cardItem.map(item =>(
+                                                    <div className='p-4' key={item.id}>
+                                                        <img className='w-10 h-12' src={item.image} alt="" />
+                                                        <div>
+                                                            <h1>{item.title}</h1>
+                                                        </div>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                    )}
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
             </div>
