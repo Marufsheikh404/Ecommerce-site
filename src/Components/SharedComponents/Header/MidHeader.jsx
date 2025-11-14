@@ -8,7 +8,7 @@ import useAuth from '../../../Hook/useAuth';
 import Swal from 'sweetalert2';
 
 const MidHeader = () => {
-    const { user, LogOut } = useAuth();
+    const { user, LogOut,ProductCount } = useAuth();
     const handleClick = () => {
         LogOut()
         Swal.fire({
@@ -60,11 +60,12 @@ const MidHeader = () => {
                     </div>
                 </div>
 
-                <div className='flex items-center ct gap-1'>
-                    <CiCreditCard1 size={25} />
-                    <div className='leading-2'>
+                <div className='flex relative items-center ct gap-1'>
+                    <CiCreditCard1 size={30} />
+                    <div className='leading-2 flex flex-col gap-1'>
                         <p className='text-[10px]'>Card</p>
-                        <span className=' text-xs'>3-Items</span>
+                        <p className='text-[10px]'>Items</p>
+                        <span  className=' absolute z-10 -top-1 -left-1 text-xs px-1 py-0.5 bg-[#5CAF90] text-white rounded-full'>{ProductCount}</span>
                     </div>
                 </div>
             </div>

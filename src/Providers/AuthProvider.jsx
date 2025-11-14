@@ -2,46 +2,68 @@ import { useEffect, useState } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { auth } from '../firebase/firebase.config';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import Swal from 'sweetalert2';
 
-const AuthProvider = ({children}) => {
-    const [user,setUser] = useState('');
-    const [loading,setLoading] = useState(false);
+
+
+
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [cardItem, setCardItem] = useState([]);
+
+    const ProductCount = cardItem.length;
+
+    // Add to card function
+    const handleAddCard = (product) => {
+        setCardItem(prevItem => {
+            const Existsitem = prevItem.find(item => item.id === product.id)
+            if (Existsitem) {
+                Swal.fire("You Card Already Added!");
+                return prevItem;
+            }
+            return [...prevItem, { ...product, quantity: 1 }]
+        })
+    };
+
 
     // signIn user
-    const signIn = (email,password)=>{
+    const signIn = (email, password) => {
         setLoading(true)
-        return signInWithEmailAndPassword(auth, email,password)
+        return signInWithEmailAndPassword(auth, email, password)
     };
 
     // signUp user 
-    const signUp = (email, password)=>{
+    const signUp = (email, password) => {
         setLoading(true)
-        return createUserWithEmailAndPassword(auth,email,password)
+        return createUserWithEmailAndPassword(auth, email, password)
     };
 
     // SignOut
-    const LogOut =()=>{
+    const LogOut = () => {
         setLoading(true)
         return signOut(auth);
     };
-    const Info ={
+    const Info = {
         loading,
         setLoading,
         signIn,
         signUp,
         LogOut,
-        user
+        user,
+        ProductCount,
+        handleAddCard
     }
 
-    useEffect(()=>{
-        const unsubcribe = onAuthStateChanged(auth,(currentUser)=>{
+    useEffect(() => {
+        const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
             console.log('currenUser', currentUser)
             setUser(currentUser)
         })
-        return ()=>{
+        return () => {
             unsubcribe();
         }
-    },[]);
+    }, []);
     return (
         <AuthContext.Provider value={Info}>
             {children}

@@ -3,12 +3,16 @@ import useData from '../../Hooks/useData';
 import { useLocation } from 'react-router';
 import { GiSelfLove } from 'react-icons/gi';
 import { IoEyeOutline } from 'react-icons/io5';
+import useAuth from '../../Hook/useAuth';
+import toast, { Toaster } from 'react-hot-toast';
 
 const SingleProduct = () => {
+    const {handleAddCard} = useAuth();
     const location = useLocation();
     const id = location.state;
     const { products } = useData();
     const findProducts = products.find(p => p.id == id)
+    const notify = () => toast('Your Card is Added');
     return (
         <div>
             <div className='container mx-auto px-4'>
@@ -34,7 +38,7 @@ const SingleProduct = () => {
                             <div className='flex items-center justify-between w-full'>
                                 <h1 className='text-lg text-[#4B5966] font-semibold'>${findProducts?.price}</h1>
                                 <h1 className='cts line-through mr-88'>${findProducts?.mrp}</h1>
-                                <h1 className='text-lg text-[#4B5966] font-semibold'>SKU#:WH12</h1>
+                                <h1 className='text-lg text-[#4B5966] font-semibold'>SKU#:{findProducts?.sku}</h1>
                             </div>
                         </div>
                         <div className='flex items-center justify-between'>
@@ -71,7 +75,8 @@ const SingleProduct = () => {
                                 <p>+</p>
                             </div>
                             <div>
-                                <button className='btn btn-xs bg-[#4B5966] text-white hover:bg-[#449a7b] transition duration-300 ease-in-out'>ADD TO CARD</button>
+                                <button onClick={()=>{handleAddCard(findProducts);notify();}} className='btn btn-xs bg-[#4B5966] text-white hover:bg-[#449a7b] transition duration-300 ease-in-out'>ADD TO CARD</button>
+                                   <Toaster />
                             </div>
                             <div className='flex items-center gap-5'>
                                 <p className='hover:bg-[#5CAF90] rounded-md px-2 py-2 transition duration-300 ease in'> <GiSelfLove /></p>
