@@ -279,5 +279,181 @@
         ],
         "quantity": 1,
         "image": "https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/product-images/50_1.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Velvet Matte Liquid Lipstick Trio",
+        "categoryId": 6,
+        "categoryName": "Cosmatics",
+        "price": 749.0,
+        "mrp": 1199.0,
+        "discount": 37,
+        "sku": "CM13",
+        "stock": "In Stock",
+        "ratings": 312,
+        "description": "Pack of 3 long-wear liquid lipsticks with velvet finish. Smudge-resistant and lightweight.",
+        "closure": "Box",
+        "sole": "N/A",
+        "width": "Compact",
+        "outerMaterial": "Plastic & Liquid",
+        "weightOptions": [
+            "3 pcs set"
+        ],
+        "quantity": 1,
+        "image": "https://i.ibb.co.com/Mk3Vm8ny/Photo-assortiment-de-produits-de-beaut.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Radiant Glow Highlighter Duo",
+        "categoryId": 6,
+        "categoryName": "Cosmatics",
+        "price": 599.0,
+        "mrp": 999.0,
+        "discount": 40,
+        "sku": "CM14",
+        "stock": "In Stock",
+        "ratings": 198,
+        "description": "Dual-toned pressed highlighter for cheekbones and brow bone. Fine shimmer, blendable formula.",
+        "closure": "Compact",
+        "sole": "N/A",
+        "width": "Slim",
+        "outerMaterial": "Plastic",
+        "weightOptions": [
+            "8 g"
+        ],
+        "quantity": 1,
+        "image": "https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/product-images/50_1.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Silk Finish Foundation Stick",
+        "categoryId": 6,
+        "categoryName": "Cosmatics",
+        "price": 1099.0,
+        "mrp": 1599.0,
+        "discount": 31,
+        "sku": "CM15",
+        "stock": "Low Stock",
+        "ratings": 421,
+        "description": "Cream-to-powder foundation stick for medium to full coverage. Blendable and transfer-resistant.",
+        "closure": "Stick Tube",
+        "sole": "N/A",
+        "width": "Medium",
+        "outerMaterial": "Plastic & Cream",
+        "weightOptions": [
+            "12 g"
+        ],
+        "quantity": 1,
+        "image": "https://i.ibb.co.com/Mk3Vm8ny/Photo-assortiment-de-produits-de-beaut.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Botanical Lip Balm Set",
+        "categoryId": 6,
+        "categoryName": "Cosmatics",
+        "price": 349.0,
+        "mrp": 499.0,
+        "discount": 30,
+        "sku": "CM16",
+        "stock": "In Stock",
+        "ratings": 147,
+        "description": "Set of 4 hydrating lip balms with botanical extracts. Nourishing and non-greasy.",
+        "closure": "Box",
+        "sole": "N/A",
+        "width": "Compact",
+        "outerMaterial": "Plastic & Wax",
+        "weightOptions": [
+            "4 pcs set"
+        ],
+        "quantity": 1,
+        "image": "https://i.ibb.co.com/Mk3Vm8ny/Photo-assortiment-de-produits-de-beaut.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Precision Eyeliner Pen",
+        "categoryId": 6,
+        "categoryName": "Cosmatics",
+        "price": 399.0,
+        "mrp": 599.0,
+        "discount": 33,
+        "sku": "CM17",
+        "stock": "In Stock",
+        "ratings": 276,
+        "description": "Fine-tip liquid eyeliner for sharp lines and long wear. Quick-dry and smudge-proof.",
+        "closure": "Card",
+        "sole": "N/A",
+        "width": "Slim",
+        "outerMaterial": "Plastic & Ink",
+        "weightOptions": [
+            "1 pcs"
+        ],
+        "quantity": 1,
+        "image": "https://i.ibb.co.com/YFkbHyr8/Black-gold-luxury-packaging-for-a-face-cream.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Hydra Boost Face Mist",
+        "categoryId": 6,
+        "categoryName": "Cosmatics",
+        "price": 499.0,
+        "mrp": 799.0,
+        "discount": 37,
+        "sku": "CM18",
+        "stock": "In Stock",
+        "ratings": 205,
+        "description": "Refreshing facial mist with hyaluronic acid for instant hydration and dewy finish.",
+        "closure": "Spray Bottle",
+        "sole": "N/A",
+        "width": "Medium",
+        "outerMaterial": "Plastic & Liquid",
+        "weightOptions": [
+            "100 ml"
+        ],
+        "quantity": 1,
+        "image": "https://i.ibb.co.com/GQKKjX6s/Premium-PSD-Skin-care-moisturizing-cosmetic.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Matte Compact Powder",
+        "categoryId": 6,
+        "categoryName": "Cosmatics",
+        "price": 449.0,
+        "mrp": 699.0,
+        "discount": 35,
+        "sku": "CM19",
+        "stock": "In Stock",
+        "ratings": 358,
+        "description": "Oil-control compact powder for a natural matte finish. Smooth application and light coverage.",
+        "closure": "Compact",
+        "sole": "N/A",
+        "width": "Compact",
+        "outerMaterial": "Plastic & Powder",
+        "weightOptions": [
+            "15 g"
+        ],
+        "quantity": 1,
+        "image": "https://i.ibb.co.com/tTxpfq0K/Promotional-product-photoshoot-Photography.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Nourishing Night Face Cream",
+        "categoryId": 6,
+        "categoryName": "Cosmatics",
+        "price": 1299.0,
+        "mrp": 1899.0,
+        "discount": 31,
+        "sku": "CM20",
+        "stock": "Out of Stock",
+        "ratings": 488,
+        "description": "Rich night cream with vitamins and peptides to repair and hydrate while you sleep.",
+        "closure": "Jar",
+        "sole": "N/A",
+        "width": "Medium",
+        "outerMaterial": "Glass & Cream",
+        "weightOptions": [
+            "50 g"
+        ],
+        "quantity": 1,
+        "image": "https://i.ibb.co.com/knG9KJK/Captured-the-essence-of-elegance-with-this.jpg"
     }
 ]
