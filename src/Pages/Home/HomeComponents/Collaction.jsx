@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import img1 from '../../../assets/image/12.jpg'
 import img2 from '../../../assets/image/13.jpg'
 import img3 from '../../../assets/image/14.jpg'
 import { Link } from 'react-router';
+import Aos from 'aos';
 
 const Collaction = () => {
+    useEffect(() => {
+        Aos.init({
+            duration: 1000,      // প্রতিটি animation এর সময় (ms)
+            easing: "ease-out", // easing টাইপ
+            once: false,        // true হলে একবারে শেষ; false হলে scroll করে আবার দেখা গেলে animate হবে
+            mirror: false,
+        });
+    }, []);
     return (
         <div className='container mx-auto px-4 lg:my-10 flex flex-col lg:flex-row  items-stretch gap-3'>
-            <div className="card flex-1 mt-4 lg:mt-0 bg-base-100 image-full w-full lg:w-96 shadow-sm relative">
+            <div data-aos="zoom-in-right" className="card flex-1 mt-4 lg:mt-0 bg-base-100 image-full w-full lg:w-96 shadow-sm relative">
                 <figure>
                     <img
                         src={img1}
@@ -24,7 +33,7 @@ const Collaction = () => {
                 <p className='absolute top-0 left-0 bg-white text-xs font-semibold'>50% Off</p>
             </div>
 
-            <div className="card flex-1 bg-base-100 mt-4 lg:mt-0 image-full w-full lg:w-96 shadow-sm relative">
+            <div data-aos="zoom-in-right" className="card flex-1 bg-base-100 mt-4 lg:mt-0 image-full w-full lg:w-96 shadow-sm relative">
                 <figure>
                     <img
                         src={img2}
@@ -40,7 +49,7 @@ const Collaction = () => {
                 <p className='absolute top-0 left-0 bg-white text-xs font-semibold'>50% Off</p>
             </div>
 
-            <div className="card flex-1 mt-4 lg:mt-0 bg-base-100 image-full w-full lg:w-96 shadow-sm relative">
+            <div data-aos="zoom-in-right" className="card flex-1 mt-4 lg:mt-0 bg-base-100 image-full w-full lg:w-96 shadow-sm relative">
                 <figure>
                     <img
                         src={img3}

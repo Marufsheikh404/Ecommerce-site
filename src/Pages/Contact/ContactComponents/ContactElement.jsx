@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Mail, Globe, Phone, MapPin, Smartphone } from "lucide-react";
 import SectionTitle from "../../../Components/SharedComponents/SectionTitle";
+import Aos from "aos";
 
 const ContactElement = () => {
+    useEffect(() => {
+        Aos.init({
+            duration: 800,      // প্রতিটি animation এর সময় (ms)
+            easing: "ease-out", // easing টাইপ
+            once: false,        // true হলে একবারে শেষ; false হলে scroll করে আবার দেখা গেলে animate হবে
+            mirror: false,
+        });
+    }, []);
     return (
         <section className="py-8 bg-white">
             <div className="max-w-6xl mx-auto text-center px-6">
-            
+
                 <div className="flex items-center justify-center mb-8"><SectionTitle title={'Get In '} colorTitle={'Touch'}></SectionTitle></div>
                 <p className="text-gray-500 mb-10 cts">
                     Please select a topic below related to your inquiry. If you don’t find
                     what you need, fill out our contact form.
                 </p>
 
-           
+
                 <div className="grid md:grid-cols-3 gap-6">
-                    
-                    <div className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-2xl transition">
+
+                    <div data-aos="zoom-out-left" className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-2xl transition">
                         <div className="flex justify-center mb-4">
                             <div className="bg-gray-700 text-white p-4 rounded-lg">
                                 <Mail className="w-6 h-6" />
@@ -35,8 +44,8 @@ const ContactElement = () => {
                         </div>
                     </div>
 
-                  
-                    <div className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-2xl transition">
+
+                    <div data-aos="zoom-out-left" className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-2xl transition">
                         <div className="flex justify-center mb-4">
                             <div className="bg-gray-700 text-white p-4 rounded-lg">
                                 <Smartphone className="w-6 h-6" />
@@ -55,8 +64,8 @@ const ContactElement = () => {
                         </div>
                     </div>
 
-                  
-                    <div className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-2xl transition">
+
+                    <div data-aos="zoom-out-left" className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-2xl transition">
                         <div className="flex justify-center mb-4">
                             <div className="bg-gray-700 text-white p-4 rounded-lg">
                                 <MapPin className="w-6 h-6" />

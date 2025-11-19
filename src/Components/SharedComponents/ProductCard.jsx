@@ -1,10 +1,19 @@
-import React from 'react';
+import Aos from 'aos';
+import { useEffect } from 'react';
 import { IoIosStarHalf } from 'react-icons/io';
 import { Link } from 'react-router';
 
 const ProductCard = ({ products }) => {
+    useEffect(() => {
+        Aos.init({
+            duration: 800,      // প্রতিটি animation এর সময় (ms)
+            easing: "ease-out", // easing টাইপ
+            once: false,        // true হলে একবারে শেষ; false হলে scroll করে আবার দেখা গেলে animate হবে
+            mirror: false,
+        });
+    }, []);
     return (
-        <div className="container mx-auto px-4 card bg-base-100 lg:w-[245px] lg:h-[280px] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer">
+        <div data-aos="zoom-in-right" className="container mx-auto px-4 card bg-base-100 lg:w-[245px] lg:h-[280px] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer">
             <figure className="h-[150px]">
                 <img
                     src={products.image}

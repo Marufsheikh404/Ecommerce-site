@@ -27,7 +27,7 @@ const MidHeader = () => {
                 <img className='w-22' src={logo} alt="" />
             </div>
             <div>
-                <label className="input w-full h-7 mt-4 translate-x-3 lg:translate-x-30">
+                <label className="input w-full h-7 mt-4 translate-x-3 lg:translate-x-20">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                             strokeLinejoin="round"
@@ -40,7 +40,7 @@ const MidHeader = () => {
                             <path d="m21 21-4.3-4.3"></path>
                         </g>
                     </svg>
-                    <input type="search" className='px-25 border-none' required placeholder="Search" />
+                    <input type="search" className='px-25 border-none focus:outline-none' required placeholder="Search" />
                 </label>
             </div>
 

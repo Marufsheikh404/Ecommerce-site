@@ -6,22 +6,13 @@ import Root from "./layout/Root";
 import Home from "./Pages/Home/Home";
 import Shop from "./Pages/Shop/Shop";
 import SingleProduct from "./Components/SharedComponents/SingleProduct";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import AuthProvider from "./Providers/AuthProvider";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import PrivateRoute from "./Routes/PrivateRoute";
-// ..
-AOS.init({
-  offset: 120,
-  delay: 0,
-  duration: 4000,
-  easing: 'ease'
-});
-
+import "aos/dist/aos.css";
 
 const router = createBrowserRouter([
   {

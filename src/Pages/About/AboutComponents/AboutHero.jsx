@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionTitle from "../../../Components/SharedComponents/SectionTitle";
 import about from '../../../assets/image/about-2.png'
 import about2 from '../../../assets/image/about-3.png'
 import about3 from '../../../assets/image/about.png'
+import Aos from "aos";
 
 const AboutHero = () => {
+    useEffect(() => {
+        Aos.init({
+            duration: 800,      // প্রতিটি animation এর সময় (ms)
+            easing: "ease-out", // easing টাইপ
+            once: false,        // true হলে একবারে শেষ; false হলে scroll করে আবার দেখা গেলে animate হবে
+            mirror: false,
+        });
+    }, []);
     return (
         <section className="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-10 items-center">
             {/* Left - Images */}
-            <div className="grid grid-cols-2 gap-4">
+            <div data-aos="zoom-out-right" className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                     <img
                         src={about}
