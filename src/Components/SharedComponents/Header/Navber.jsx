@@ -12,19 +12,20 @@ const Navber = () => {
     return (
         <div className="border-y border-gray-200 py-4">
             <div className="flex items-center justify-between container mx-auto px-3">
-                {/* Left: All Category */}
+
                 <div className="flex items-center gap-1 cp py-2 px-2 rounded-md text-white bg-[#5CAF90]">
                     <BiCategory size={25} />
                     <p>All Category</p>
                     <IoIosArrowDown className="ml-1" />
                 </div>
 
-                {/* Center Nav Links - visible on large screens only */}
+
+
                 <div className="hidden lg:flex items-center gap-10 cts">
                     <NavLink
                         to="/"
                         className={({ isActive }) =>
-                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                            isActive ? "text-[#5CAF90] font-bold scale-110 transition" : "text-gray-700 font-semibold"
                         }
                     >
                         Home
@@ -32,7 +33,7 @@ const Navber = () => {
                     <NavLink
                         to="/category"
                         className={({ isActive }) =>
-                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                            isActive ? "text-[#5CAF90] font-bold scale-110 transition" : "text-gray-700 font-semibold"
                         }
                     >
                         Shop-Now
@@ -40,7 +41,7 @@ const Navber = () => {
                     <NavLink
                         to="/about"
                         className={({ isActive }) =>
-                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                            isActive ? "text-[#5CAF90] font-bold scale-110 transition" : "text-gray-700 font-semibold"
                         }
                     >
                         About
@@ -48,7 +49,7 @@ const Navber = () => {
                     <NavLink
                         to="/contact"
                         className={({ isActive }) =>
-                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                            isActive ? "text-[#5CAF90] font-bold scale-110 transition" : "text-gray-700 font-semibold"
                         }
                     >
                         Contact
@@ -81,7 +82,7 @@ const Navber = () => {
                         to="/"
                         onClick={() => setMenuOpen(false)}
                         className={({ isActive }) =>
-                            isActive ? "text-[#5CAF90] font-semibold" : "text-gray-700"
+                            isActive ? "text-[#5CAF90] bold scale-110" : "text-gray-700 font-bold"
                         }
                     >
                         Home

@@ -7,7 +7,7 @@ import useAuth from '../../Hook/useAuth';
 import toast, { Toaster } from 'react-hot-toast';
 
 const SingleProduct = () => {
-    const {handleAddCard ,ProductCount, handleIncrease,handleDecrease} = useAuth();
+    const {handleAddCard ,ProductCount, handleIncrease,handleDecrease,handleWish} = useAuth();
     const location = useLocation();
     const id = location.state;
     const { products } = useData();
@@ -79,7 +79,7 @@ const SingleProduct = () => {
                                    <Toaster />
                             </div>
                             <div className='flex items-center gap-5'>
-                                <p className='hover:bg-[#5CAF90] rounded-md px-2 py-2 transition duration-300 ease in'> <GiSelfLove /></p>
+                                <p onClick={()=>handleWish(findProducts.id)} className='hover:bg-[#5CAF90] rounded-md px-2 py-2 transition duration-300 ease in'> <GiSelfLove /></p>
                                 <p className='hover:bg-[#5CAF90] rounded-md px-2 py-2 transition duration-300 ease in'><IoEyeOutline /></p>
                             </div>
                         </div>

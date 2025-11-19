@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { auth } from '../firebase/firebase.config';
-import { createUserWithEmailAndPassword, onAuthStateChanged, ProviderId, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import Swal from 'sweetalert2';
 
 
@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState('');
     const [loading, setLoading] = useState(false);
     const [cardItem, setCardItem] = useState([]);
+    const [wish, setWish] = useState([]);
 
     const ProductCount = cardItem.length;
 
@@ -26,18 +27,33 @@ const AuthProvider = ({ children }) => {
         })
     };
 
-    const handleIncrease =(productId)=>{
+    // add wishList
+    const handleWish = (id) => {
+        setWish((prevItems) => {
+            const exists = prevItems.find((item) => item.id === id);
+
+            if (exists) {
+                Swal.fire("Already in wishlist");
+                return prevItems;
+            }
+
+            return [...prevItems, { id, count: 1 }];
+        });
+    };
+
+
+    const handleIncrease = (productId) => {
         setCardItem(prevItem =>
-            prevItem.map(item => item.id === productId ?{
+            prevItem.map(item => item.id === productId ? {
                 ...item, quantity: item.quantity + 1
             } : item)
         )
     }
 
-    const handleDecrease  =(productId)=>{
+    const handleDecrease = (productId) => {
         setCardItem(prevItem =>
             prevItem.map(item => item.id === productId ? {
-                ...item, quantity: item.quantity -1
+                ...item, quantity: item.quantity - 1
             } : item)
         )
     }
@@ -71,7 +87,9 @@ const AuthProvider = ({ children }) => {
         handleAddCard,
         cardItem,
         handleIncrease,
-        handleDecrease
+        handleDecrease,
+        handleWish,
+        wish
     }
 
     useEffect(() => {

@@ -7,11 +7,11 @@ const TopHeader = () => {
         <div className="hidden lg:flex items-center justify-between container mx-auto px-4">
             <div className="flex items-center gap-2 ct">
                 <div className="flex items-center gap-1">
-                    <PiPhoneCall size={20} />
+                    <PiPhoneCall className="text-[#5CAF90]" size={20} />
                     <p>+8801719199642</p>
                 </div>
                 <div className="flex items-center gap-1">
-                    <PiWhatsappLogoThin size={20} />
+                    <PiWhatsappLogoThin className="text-[#5CAF90]" size={20} />
                     <p>+8801719199642</p>
                 </div>
             </div>
