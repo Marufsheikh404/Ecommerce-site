@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { auth } from '../firebase/firebase.config';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
 
 
 
@@ -20,43 +20,59 @@ const AuthProvider = ({ children }) => {
         setCardItem(prevItem => {
             const Existsitem = prevItem.find(item => item.id === product.id)
             if (Existsitem) {
-                Swal.fire("You Card Already Added!");
+                toast.error("Your Cart Already Added!", {
+                    style: { background: '#FF4D4D', color: '#fff' },
+                    icon: '⚠️'
+                });
                 return prevItem;
             }
+            toast.success("Your Cart is Added", {
+                style: { background: '#5CAF90', color: '#fff' },
+                icon: '✅'
+            });
             return [...prevItem, { ...product, quantity: 1 }]
         })
     };
 
     // add wishList
-    const handleWish = (id) => {
-        setWish((prevItems) => {
-            const exists = prevItems.find((item) => item.id === id);
+    const handleWish = (product) => {
+        setWish(prevItems => {
+            const exists = prevItems.find(item => item.id === product.id);
 
             if (exists) {
-                Swal.fire("Already in wishlist");
+                toast.error("Already in wishlist!", {
+                    style: { background: '#FF4D4D', color: '#fff' },
+                    icon: '⚠️'
+                });
                 return prevItems;
             }
 
-            return [...prevItems, { id, count: 1 }];
+            toast.success("Added to wishlist!", {
+                style: { background: '#5CAF90', color: '#fff' },
+                icon: '✅'
+            });
+
+            return [...prevItems, { ...product, count: 1 }];
         });
     };
 
 
-    const handleIncrease = (productId) => {
-        setCardItem(prevItem =>
-            prevItem.map(item => item.id === productId ? {
-                ...item, quantity: item.quantity + 1
-            } : item)
-        )
-    }
 
-    const handleDecrease = (productId) => {
-        setCardItem(prevItem =>
-            prevItem.map(item => item.id === productId ? {
-                ...item, quantity: item.quantity - 1
-            } : item)
-        )
-    }
+    // const handleIncrease = (productId) => {
+    //     setCardItem(prevItem =>
+    //         prevItem.map(item => item.id === productId ? {
+    //             ...item, quantity: item.quantity + 1
+    //         } : item)
+    //     )
+    // }
+
+    // const handleDecrease = (productId) => {
+    //     setCardItem(prevItem =>
+    //         prevItem.map(item => item.id === productId ? {
+    //             ...item, quantity: item.quantity - 1
+    //         } : item)
+    //     )
+    // }
 
 
     // signIn user
@@ -86,8 +102,6 @@ const AuthProvider = ({ children }) => {
         ProductCount,
         handleAddCard,
         cardItem,
-        handleIncrease,
-        handleDecrease,
         handleWish,
         wish
     }

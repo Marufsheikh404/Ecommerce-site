@@ -4,7 +4,7 @@ import { useLocation } from 'react-router';
 import { GiSelfLove } from 'react-icons/gi';
 import { IoEyeOutline } from 'react-icons/io5';
 import useAuth from '../../Hook/useAuth';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 
 const SingleProduct = () => {
     const { handleAddCard, ProductCount, handleIncrease, handleDecrease, handleWish } = useAuth();
@@ -12,13 +12,6 @@ const SingleProduct = () => {
     const id = location.state;
     const { products } = useData();
     const findProducts = products.find(p => p.id == id)
-    const notify = () => toast.success('Your Card is Added', {
-        style: {
-            background: '#5CAF90',
-            color: '#fff',          
-        },
-        icon: '✅',
-    });
     return (
         <div>
             <div className='container mx-auto px-4'>
@@ -81,7 +74,7 @@ const SingleProduct = () => {
                                 <button className='btn btn-xs' onClick={() => handleIncrease(findProducts.id)}>+</button>
                             </div>
                             <div>
-                                <button onClick={() => { handleAddCard(findProducts); notify(); }} className='btn btn-xs bg-[#4B5966] text-white hover:bg-[#449a7b] transition duration-300 ease-in-out'>ADD TO CARD</button>
+                                <button onClick={() => { handleAddCard(findProducts)}} className='btn btn-xs bg-[#4B5966] text-white hover:bg-[#449a7b] transition duration-300 ease-in-out'>ADD TO CARD</button>
                                 <Toaster />
                             </div>
                             <div className='flex items-center gap-5'>

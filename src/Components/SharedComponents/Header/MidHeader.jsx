@@ -1,98 +1,116 @@
-import React from 'react';
-import logo from '../../../assets/image/miner.jpeg'
+import React, { useState } from 'react';
+import logo from '../../../assets/image/miner.jpeg';
 import { CgProfile } from 'react-icons/cg';
 import { GiSelfLove } from 'react-icons/gi';
 import { CiCreditCard1 } from 'react-icons/ci';
 import { Link } from 'react-router';
 import useAuth from '../../../Hook/useAuth';
 import Swal from 'sweetalert2';
-import { useState } from 'react';
 
 const MidHeader = () => {
     const [showCard, setShowCard] = useState(false);
-    const { user, LogOut, ProductCount, cardItem, wish, } = useAuth();
+    const { user, LogOut, ProductCount, cardItem, wish } = useAuth();
+
     const handleClick = () => {
-        LogOut()
+        LogOut();
         Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Log Out",
+            position: 'top-end',
+            icon: 'success',
+            title: 'Log Out',
             showConfirmButton: false,
             timer: 1500
         });
     };
+
     return (
-        <div className='lg:flex items-center justify-between container mx-auto px-4 '>
-            <div className='translate-x-36 lg:translate-x-0'>
-                <img className='w-18 ' src={logo} alt="" />
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-4">
+
+            {/* Logo */}
+            <div className="flex justify-center lg:justify-start w-full lg:w-auto">
+                <img src={logo} alt="Logo" className="w-24 lg:w-25 object-contain" />
             </div>
-            <div>
-                <label className="input w-full h-7 mt-4 translate-x-3 lg:translate-x-12 border-none outline-none">
-                    <svg className="h-[1em] w-10 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <g
-                            strokeLinejoin="round"
-                            strokeLinecap="round"
-                            strokeWidth="2.5"
-                            fill="none"
-                            stroke="currentColor"
-                        >
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.3-4.3"></path>
-                        </g>
+
+            {/* Search */}
+            <div className="flex justify-center lg:justify-start w-full lg:w-1/3">
+                <div className="relative w-full">
+                    <input
+                        type="search"
+                        placeholder="Search"
+                        className="w-full pl-10 pr-4 py-2 rounded-full border border-green-600 focus:ring-2 focus:ring-[#5CAF90] outline-none"
+                    />
+                    <svg
+                        className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
                     </svg>
-                    <input type="search" className='px-25 border border-green-600 focus:ring-1 focus:ring-[#5CAF90] rounded-full' required placeholder="Search" />
-                </label>
+                </div>
             </div>
 
-            <div className='hidden lg:flex items-center gap-3'>
-                <div className='flex items-center ct gap-3'>
-                    <CgProfile className='text-[#5CAF90]' size={25} />
-                    <div className='leading-2'>
-                        {
-                            user ? <Link to={'/login'}><button onClick={handleClick} className='btn btn-xs bg-[#5CAF90] text-white'><span className=' text-sm font-semibold'>LogOut</span></button></Link> : <Link to={'/login'}><button className='btn btn-xs bg-[#5CAF90] text-white'><span className=' text-sm font-semibold'>Login</span></button></Link>
-                        }
-                    </div>
+            {/* Actions */}
+            <div className="flex items-center gap-4 justify-center lg:justify-end w-full lg:w-auto">
+                {/* Profile/Login */}
+                <div className="flex items-center gap-2">
+                    <CgProfile className="text-[#5CAF90]" size={25} />
+                    {user ? (
+                        <button onClick={handleClick} className="btn btn-xs bg-[#5CAF90] text-white">
+                            LogOut
+                        </button>
+                    ) : (
+                        <Link to="/login">
+                            <button className="btn btn-xs bg-[#5CAF90] text-white">Login</button>
+                        </Link>
+                    )}
                 </div>
 
-                <div className='relative flex items-center ct gap-1'>
-                    <GiSelfLove className='text-[#5CAF90]' size={25} />
-                    <div className='leading-2'>
-                        <p className='text-[10px]'>WishList</p>
-                        <span className=' absolute z-10 -top-1 -left-1 text-xs px-1 py-0.5 bg-[#5CAF90] text-white rounded-full'>{wish.length}</span>
-                    </div>
+                {/* Wishlist */}
+                <div className="relative flex items-center gap-1">
+                    <GiSelfLove className="text-[#5CAF90]" size={25} />
+                    <span className="absolute -top-2 -right-2 bg-[#5CAF90] text-white text-xs px-1 py-0.5 rounded-full">
+                        {wish.length}
+                    </span>
                 </div>
 
-                <div className='flex relative items-center ct gap-1'>
-                    <CiCreditCard1 className='text-[#5CAF90]' onClick={() => setShowCard(!showCard)} size={30} />
-                    <div className='leading-2 flex flex-col gap-1'>
-                        <p className='text-[10px]'>Card</p>
-                        <p className='text-[10px]'>Items</p>
-                        <span className=' absolute z-10 -top-1 -left-1 text-xs px-1 py-0.5 bg-[#5CAF90] text-white rounded-full'>{ProductCount}</span>
-                        {
-                            showCard && (
-                                <div className='absolute bg-[#ffffff] text-black top-10 left-0 ronded-lg w-72 z-50 gap-5'>
-                                    {cardItem.length === 0 ? <p>Card is Empty</p> : (
-                                        <>
-                                            <h3 className='font-semibold border-b pb-2 mb-4'>Shoping Card</h3>
-                                            <div>
-                                                {
-                                                    cardItem.map(item => (
-                                                        <div className='p-4 bg-gray-100 mb-3 items-center rounded gap-5 ' key={item.id}>
-                                                            <img className='w-10 h-12 object-contain rounded' src={item.image} alt="" />
-                                                            <div>
-                                                                <h1 >{item.categoryName}</h1>
-                                                                <p></p>
-                                                            </div>
-                                                        </div>
-                                                    ))
-                                                }
+                {/* Cart */}
+                <div className="relative flex items-center gap-1">
+                    <CiCreditCard1
+                        className="text-[#5CAF90] cursor-pointer"
+                        size={30}
+                        onClick={() => setShowCard(!showCard)}
+                    />
+                    <span className="absolute -top-2 -right-2 bg-[#5CAF90] text-white text-xs px-1 py-0.5 rounded-full">
+                        {ProductCount}
+                    </span>
+
+                    {/* Dropdown */}
+                    {showCard && (
+                        <div className="absolute top-10 right-0 w-72 bg-white text-black shadow-lg rounded-lg z-50 p-4">
+                            {cardItem.length === 0 ? (
+                                <p className="text-center text-gray-500">Cart is Empty</p>
+                            ) : (
+                                <>
+                                    <h3 className="font-semibold border-b pb-2 mb-4">Shopping Cart</h3>
+                                    <div className="flex flex-col gap-3">
+                                        {cardItem.map((item) => (
+                                            <div key={item.id} className="flex items-center gap-3 bg-gray-100 p-3 rounded">
+                                                <img src={item.image} alt={item.categoryName} className="w-10 h-12 object-contain rounded" />
+                                                <div>
+                                                    <h4 className="font-medium">{item.categoryName}</h4>
+                                                </div>
                                             </div>
-                                        </>
-                                    )}
-                                </div>
-                            )
-                        }
-                    </div>
+                                        ))}
+                                    </div>
+                                </>
+                            )}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
