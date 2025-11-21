@@ -62,7 +62,7 @@ const Shop = () => {
 
 
                 <div className="lg:col-span-10">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mt-6">
+                    <div style={{gridTemplateColumns:"repeat(auto-fit, minmax(220px, 1fr"}} className="grid gap-6 mt-6">
                         {filterID.map((d) => (
                             <ProductCard key={d.id} products={d}></ProductCard>
                         ))}

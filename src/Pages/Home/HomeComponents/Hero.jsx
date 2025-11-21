@@ -12,11 +12,11 @@ const Hero = () => {
             <Swiper
                 modules={[Autoplay]}
                 autoplay={{
-                    delay: 3000,      // 3 sec
+                    delay: 3000,    
                     disableOnInteraction: false,
                 }}
                 loop={true}
-                speed={1000}         // smooth transition speed
+                speed={1000}       
                 slidesPerView={1}
             >
                 <SwiperSlide>

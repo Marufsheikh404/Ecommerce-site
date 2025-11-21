@@ -6,9 +6,9 @@ import { Link } from 'react-router';
 const ProductCard = ({ products }) => {
     useEffect(() => {
         Aos.init({
-            duration: 800,      // প্রতিটি animation এর সময় (ms)
-            easing: "ease-out", // easing টাইপ
-            once: false,        // true হলে একবারে শেষ; false হলে scroll করে আবার দেখা গেলে animate হবে
+            duration: 800,
+            easing: "ease-out",
+            once: false,
             mirror: false,
         });
     }, []);
@@ -47,6 +47,7 @@ const ProductCard = ({ products }) => {
                 </div>
             </Link>
         </div>
+
 
     );
 };

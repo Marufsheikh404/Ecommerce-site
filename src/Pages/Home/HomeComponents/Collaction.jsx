@@ -8,9 +8,9 @@ import Aos from 'aos';
 const Collaction = () => {
     useEffect(() => {
         Aos.init({
-            duration: 1000,      // প্রতিটি animation এর সময় (ms)
-            easing: "ease-out", // easing টাইপ
-            once: false,        // true হলে একবারে শেষ; false হলে scroll করে আবার দেখা গেলে animate হবে
+            duration: 1000,      
+            easing: "ease-out", 
+            once: false,     
             mirror: false,
         });
     }, []);

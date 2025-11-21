@@ -12,7 +12,9 @@ const TopProducts = () => {
                     <SectionTitle title={'New'} colorTitle={'Arrivals'} des={'Shop online for new arrivals and get free shipping!'}></SectionTitle>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+                <div
+                    className='grid gap-8'
+                    style={{gridTemplateColumns:"repeat(auto-fit, minmax(220px, 1fr))"}}>
                     {
                         products
                             .slice(-8)

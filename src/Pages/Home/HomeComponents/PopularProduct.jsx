@@ -5,7 +5,7 @@ import ProductCard from '../../../Components/SharedComponents/ProductCard';
 import { BiCategory } from 'react-icons/bi';
 import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
 import { Link } from 'react-router';
- 
+
 
 const PopularProduct = () => {
     const { products, categories } = useData();
@@ -14,7 +14,7 @@ const PopularProduct = () => {
 
     const handleClick = (id) => {
         setCategoryId(id);
-        setMenuOpen(false); 
+        setMenuOpen(false);
     };
 
     const ProductsFilter = categoryId
@@ -30,7 +30,7 @@ const PopularProduct = () => {
                     des={'Here are the Most popular Products'}
                 />
 
-        
+
                 <div className="hidden lg:flex items-center gap-4">
                     {categories.map((item) => (
                         <button
@@ -44,7 +44,7 @@ const PopularProduct = () => {
                     ))}
                 </div>
 
-        
+
                 <div className="relative w-full lg:hidden">
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
@@ -71,8 +71,11 @@ const PopularProduct = () => {
                 </div>
             </div>
 
-       
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+
+            <div
+                className="grid gap-8 mt-6"
+                style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}
+            >
                 {ProductsFilter
                     .sort((a, b) => b.ratings - a.ratings)
                     .slice(0, 8)
@@ -80,6 +83,8 @@ const PopularProduct = () => {
                         <ProductCard key={item.id} products={item} />
                     ))}
             </div>
+
+
 
 
             <Link to={'category'}>
