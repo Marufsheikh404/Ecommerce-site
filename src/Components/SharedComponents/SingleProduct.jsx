@@ -7,12 +7,18 @@ import useAuth from '../../Hook/useAuth';
 import toast, { Toaster } from 'react-hot-toast';
 
 const SingleProduct = () => {
-    const {handleAddCard ,ProductCount, handleIncrease,handleDecrease,handleWish} = useAuth();
+    const { handleAddCard, ProductCount, handleIncrease, handleDecrease, handleWish } = useAuth();
     const location = useLocation();
     const id = location.state;
     const { products } = useData();
     const findProducts = products.find(p => p.id == id)
-    const notify = () => toast('Your Card is Added');
+    const notify = () => toast.success('Your Card is Added', {
+        style: {
+            background: '#5CAF90',
+            color: '#fff',          
+        },
+        icon: '✅',
+    });
     return (
         <div>
             <div className='container mx-auto px-4'>
@@ -70,16 +76,16 @@ const SingleProduct = () => {
                         </div>
                         <div className='flex items-center justify-between w-80 my-4'>
                             <div className='flex items-center gap-3  px-6 py-1'>
-                                <button className='btn btn-xs' onClick={()=>handleDecrease(findProducts.id)}>-</button>
+                                <button className='btn btn-xs' onClick={() => handleDecrease(findProducts.id)}>-</button>
                                 <p>{ProductCount}</p>
-                                <button className='btn btn-xs' onClick={()=>handleIncrease(findProducts.id)}>+</button>
+                                <button className='btn btn-xs' onClick={() => handleIncrease(findProducts.id)}>+</button>
                             </div>
                             <div>
-                                <button onClick={()=>{handleAddCard(findProducts);notify();}} className='btn btn-xs bg-[#4B5966] text-white hover:bg-[#449a7b] transition duration-300 ease-in-out'>ADD TO CARD</button>
-                                   <Toaster />
+                                <button onClick={() => { handleAddCard(findProducts); notify(); }} className='btn btn-xs bg-[#4B5966] text-white hover:bg-[#449a7b] transition duration-300 ease-in-out'>ADD TO CARD</button>
+                                <Toaster />
                             </div>
                             <div className='flex items-center gap-5'>
-                                <p onClick={()=>handleWish(findProducts.id)} className='hover:bg-[#5CAF90] rounded-md px-2 py-2 transition duration-300 ease in'> <GiSelfLove /></p>
+                                <p onClick={() => handleWish(findProducts.id)} className='hover:bg-[#5CAF90] rounded-md px-2 py-2 transition duration-300 ease in'> <GiSelfLove /></p>
                                 <p className='hover:bg-[#5CAF90] rounded-md px-2 py-2 transition duration-300 ease in'><IoEyeOutline /></p>
                             </div>
                         </div>
