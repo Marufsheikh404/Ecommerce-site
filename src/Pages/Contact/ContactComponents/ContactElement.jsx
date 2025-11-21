@@ -6,9 +6,9 @@ import Aos from "aos";
 const ContactElement = () => {
     useEffect(() => {
         Aos.init({
-            duration: 800,      // প্রতিটি animation এর সময় (ms)
-            easing: "ease-out", // easing টাইপ
-            once: false,        // true হলে একবারে শেষ; false হলে scroll করে আবার দেখা গেলে animate হবে
+            duration: 800,      
+            easing: "ease-out",
+            once: false,        
             mirror: false,
         });
     }, []);
@@ -16,8 +16,8 @@ const ContactElement = () => {
         <section className="py-8 bg-white">
             <div className="max-w-6xl mx-auto text-center px-6">
 
-                <div className="flex items-center justify-center mb-8"><SectionTitle title={'Get In '} colorTitle={'Touch'}></SectionTitle></div>
-                <p className="text-gray-500 mb-10 cts">
+                <div data-aos="fade-up" data-aos-duration="2000" className="flex items-center justify-center mb-8"><SectionTitle title={'Get In '} colorTitle={'Touch'}></SectionTitle></div>
+                <p data-aos="fade-up" data-aos-duration="2000"  className="text-gray-500 mb-10 cts">
                     Please select a topic below related to your inquiry. If you don’t find
                     what you need, fill out our contact form.
                 </p>

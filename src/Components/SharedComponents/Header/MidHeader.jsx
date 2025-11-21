@@ -22,12 +22,12 @@ const MidHeader = () => {
         });
     };
     return (
-        <div className='lg:flex items-center justify-between container mx-auto px-4  '>
+        <div className='lg:flex items-center justify-between container mx-auto px-4 '>
             <div className='translate-x-36 lg:translate-x-0'>
                 <img className='w-18 ' src={logo} alt="" />
             </div>
             <div>
-                <label className="input w-full h-7 mt-4 translate-x-3 lg:translate-x-20 border-none outline-none">
+                <label className="input w-full h-7 mt-4 translate-x-3 lg:translate-x-12 border-none outline-none">
                     <svg className="h-[1em] w-10 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                             strokeLinejoin="round"

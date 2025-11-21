@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import SectionTitle from "../../../Components/SharedComponents/SectionTitle";
 import about from '../../../assets/image/about-2.png'
 import about2 from '../../../assets/image/about-3.png'
@@ -8,9 +8,9 @@ import Aos from "aos";
 const AboutHero = () => {
     useEffect(() => {
         Aos.init({
-            duration: 800,      // প্রতিটি animation এর সময় (ms)
-            easing: "ease-out", // easing টাইপ
-            once: false,        // true হলে একবারে শেষ; false হলে scroll করে আবার দেখা গেলে animate হবে
+            duration: 800,
+            easing: "ease-out",
+            once: false,
             mirror: false,
         });
     }, []);
@@ -39,12 +39,12 @@ const AboutHero = () => {
 
             {/* Right - Text */}
             <div>
-                <SectionTitle title={'Who We'} colorTitle={'Are ?'}></SectionTitle>
-                <p className="text-lg text-gray-700 font-medium mb-6 uppercase cts">
+                <div data-aos="fade-up" data-aos-duration ="2000">  <SectionTitle title={'Who We'} colorTitle={'Are ?'}></SectionTitle></div>
+                <p data-aos="fade-up" data-aos-duration ="2000" className="text-lg text-gray-700 font-medium mb-6 uppercase cts">
                     We’re here to serve only the best products for you, enriching your
                     homes with the best essentials.
                 </p>
-                <div className="space-y-4 text-gray-600 leading-relaxed ct">
+                <div data-aos="fade-up" data-aos-duration ="2000" className="space-y-4 text-gray-600 leading-relaxed ct">
                     <p>
                         Lorem ipsum is simply dummy text of the printing and typesetting
                         industry. Lorem Ipsum has been the industry standard dummy text ever

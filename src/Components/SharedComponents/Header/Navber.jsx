@@ -10,7 +10,7 @@ const Navber = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <div className="border-y border-gray-200 py-4">
+        <div className="border-y border-gray-200 py-2">
             <div className="flex items-center justify-between container mx-auto px-3">
 
                 <div className="flex items-center gap-1 cp py-2 px-2 rounded-md text-white bg-[#5CAF90]">
