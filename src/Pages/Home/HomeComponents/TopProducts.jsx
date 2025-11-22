@@ -8,7 +8,7 @@ const TopProducts = () => {
     return (
         <>
             <div className='container mx-auto px-4 my-3'>
-                <div>
+                <div className='my-8'>
                     <SectionTitle title={'New'} colorTitle={'Arrivals'} des={'Shop online for new arrivals and get free shipping!'}></SectionTitle>
                 </div>
 

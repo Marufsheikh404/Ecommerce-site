@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../../assets/image/miner.jpeg';
+import logo from '../../../assets/image/logo.jpeg';
 import { CgProfile } from 'react-icons/cg';
 import { GiSelfLove } from 'react-icons/gi';
 import { CiCreditCard1 } from 'react-icons/ci';
@@ -26,13 +26,13 @@ const MidHeader = () => {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-4">
 
             {/* Logo */}
-            <div className="flex justify-center lg:justify-start w-full lg:w-auto">
-                <img src={logo} alt="Logo" className="w-24 lg:w-25 object-contain" />
+            <div className="flex justify-center lg:justify-start w-full lg:w-auto py-4">
+                <img src={logo} alt="Logo" className="w-14 lg:w-13  object-contain rounded-full" />
             </div>
 
             {/* Search */}
             <div className="flex justify-center lg:justify-start w-full lg:w-1/3">
-                <div className="relative w-full">
+                <div className="relative w-full translate-x-13">
                     <input
                         type="search"
                         placeholder="Search"
